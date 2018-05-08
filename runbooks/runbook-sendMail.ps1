@@ -6,16 +6,24 @@ Param (
  
     [Parameter (Mandatory = $true)]
     [object] 
-    $MessageBody
+    $MessageBody,
+
+    [Parameter (Mandatory = $true)]
+    [string]
+    $mailTo,
+
+    [Parameter (Mandatory = $true)]
+    [string]
+    $mailFrom
   )
  
 $O365Credential = Get-AutomationPSCredential -Name "mailCred"
      
 $Message = New-Object System.Net.Mail.MailMessage
          
-$Message.From = "v-jegebh@microsoft.com"
-$Message.replyTo = "v-jegebh@microsoft.com"
-$Message.To.Add("v-jegebh@microsoft.com")
+$Message.From = $mailFrom
+$Message.replyTo = $mailFrom
+$Message.To.Add($mailTo)
    
 $Message.SubjectEncoding = ([System.Text.Encoding]::UTF8)
 $Message.Subject = "Runbook job: $($RunbookName) | Deployment state: $($MessageBody.ProvisioningState)"
