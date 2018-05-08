@@ -39,6 +39,6 @@ $Message.IsBodyHtml = $true
          
 $SmtpClient = New-Object System.Net.Mail.SmtpClient 'smtp.office365.com', 587
 $SmtpClient.Credentials = $O365Credential
-$SmtpClient.EnableSsl   = $true
+$SmtpClient.EnableSsl = $true
    
 $SmtpClient.Send($Message)
