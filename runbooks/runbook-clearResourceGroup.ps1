@@ -32,4 +32,5 @@ $mailParams = @{
 "MessageBody" = $deployment
 }
 
-Start-AzureRmAutomationRunbook -ResourceGroupName "jegebhAutomationRG" -Name "runbook-sendMail" -AutomationAccountName "jegebhAutomataionAccount" -Parameters $mailParams
+Start-AzureRmAutomationRunbook -ResourceGroupName "jegebhAutomationRG" -Name "runbook-sendMail" -AutomationAccountName "jegebhAutomationAccount" -Parameters $mailParams
+
