@@ -23,6 +23,8 @@ $deployment = New-AzureRmResourceGroupDeployment -ResourceGroupName $DeployToRes
 $mailParams = @{
 "RunbookName" = "runbook-deployLinuxVm";
 "MessageBody" = $deployment;
+"MailTo" = "v-jegebh@microsoft.com";
+"MailFrom" = "v-jegebh@microsoft.com";
 }
 
 Start-AzureRmAutomationRunbook -ResourceGroupName "jegebhAutomationRG" -Name "runbook-sendMail" -AutomationAccountName "jegebhAutomationAccount" -Parameters $mailParams
