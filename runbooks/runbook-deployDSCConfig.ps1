@@ -21,7 +21,9 @@ $deployment = Import-AzureRmAutomationDscConfiguration -AutomationAccountName "j
 
 $mailParams = @{
 "RunbookName" = "runbook-deployDSCConfig";
-"MessageBody" = $deployment
+"MessageBody" = $deployment;
+"MailTo" = "v-jegebh@microsoft.com";
+"MailFrom" = "v-jegebh@microsoft.com";
 }
 
-Start-AzureRmAutomationRunbook -ResourceGroupName "jegebhDevRG" -Name "runbook-sendMail" -AutomationAccountName "jegebhAutomationAccount" -Parameters $mailParams
+Start-AzureRmAutomationRunbook -ResourceGroupName "jegebhAutomationRG" -Name "runbook-sendMail" -AutomationAccountName "jegebhAutomationAccount" -Parameters $mailParams
