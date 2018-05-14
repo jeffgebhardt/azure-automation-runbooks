@@ -27,4 +27,4 @@ $mailParams = @{
 "MailFrom" = "v-jegebh@microsoft.com";
 }
 
-Start-AzureRmAutomationRunbook -ResourceGroupName "jegebhAutomationRG" -Name "runbook-sendMail" -AutomationAccountName "jegebhAutomationAccount" -Parameters $mailParams
+Start-AzureRmAutomationRunbook -ResourceGroupName "jegebhaaRG" -Name "runbook-sendMail" -AutomationAccountName "jegebhaa" -Parameters $mailParams
