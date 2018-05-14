@@ -29,7 +29,9 @@ $deployment = New-AzureRmResourceGroupDeployment -ResourceGroupName $ClearResour
 
 $mailParams = @{
 "RunbookName" = "runbook-clearResourceGroup";
-"MessageBody" = $deployment
+"MessageBody" = $deployment;
+"mailTo" = "v-jegebh@microsoft.com";
+"mailFrom" = "v-jegebh@microsoft.com";
 }
 
 Start-AzureRmAutomationRunbook -ResourceGroupName "jegebhAutomationRG" -Name "runbook-sendMail" -AutomationAccountName "jegebhAutomationAccount" -Parameters $mailParams
